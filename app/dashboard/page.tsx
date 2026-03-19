@@ -170,12 +170,12 @@ export default function DashboardPage() {
             {/* Editor Column */}
             <div className="flex-1 space-y-8 max-w-2xl">
                 <section className="space-y-4 font-outfit">
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <h2 className="text-2xl font-bold tracking-tight text-white">Profile</h2>
                         {user?.username && (
-                            <div className="flex items-center gap-2 bg-zinc-950/50 border border-zinc-900 rounded-full px-4 py-1.5 transition-all hover:border-zinc-700 group">
-                                <span className="text-xs font-medium text-zinc-500 uppercase tracking-widest">Your Link:</span>
-                                <span className="text-sm font-bold text-white tracking-tight">linkroot.com/{user.username}</span>
+                            <div className="flex items-center gap-2 bg-zinc-950/50 border border-zinc-900 rounded-full px-4 py-1.5 transition-all hover:border-zinc-700 group max-w-full overflow-hidden">
+                                <span className="text-xs font-medium text-zinc-500 uppercase tracking-widest flex-shrink-0">Your Link:</span>
+                                <span className="text-sm font-bold text-white tracking-tight truncate">linkroot.space/{user.username}</span>
                                 <Button
                                     variant="ghost"
                                     size="icon"
@@ -221,10 +221,10 @@ export default function DashboardPage() {
                                             <Camera className="size-3.5" />
                                         </div>
                                     </div>
-                                    <div className="flex-1 w-full space-y-4">
+                                    <div className="flex-1 w-full space-y-4 min-w-0">
                                         <div className="space-y-2 text-center sm:text-left">
-                                            <h3 className="font-semibold text-white text-lg">{user?.name || "No name set"}</h3>
-                                            <p className="text-sm text-zinc-500">{user?.bio || "No bio yet. Tell the world about yourself!"}</p>
+                                            <h3 className="font-semibold text-white text-lg break-words">{user?.name || "No name set"}</h3>
+                                            <p className="text-sm text-zinc-500 break-words">{user?.bio || "No bio yet. Tell the world about yourself!"}</p>
                                         </div>
                                         <div className="flex gap-2">
                                             <Button
@@ -253,7 +253,7 @@ export default function DashboardPage() {
                                         <div className="space-y-2">
                                             <label className="text-xs font-bold uppercase tracking-widest text-zinc-500">Username</label>
                                             <div className="relative">
-                                                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-600 text-sm font-medium">linkroot.com/</span>
+                                                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-600 text-sm font-medium">linkroot.space/</span>
                                                 <Input
                                                     value={editUsername}
                                                     onChange={(e) => setEditUsername(e.target.value)}
@@ -457,7 +457,7 @@ export default function DashboardPage() {
                                         </Card>
                                     } 
                                 />
-                                <PopoverContent className="w-[500px] p-6 bg-zinc-950 border-zinc-900 shadow-2xl" side="right" align="end" sideOffset={20}>
+                                <PopoverContent className="w-[calc(100vw-2rem)] sm:w-[500px] p-6 bg-zinc-950 border-zinc-900 shadow-2xl" side="right" align="end" sideOffset={20}>
                                     <div className="space-y-4">
                                         <div className="flex items-center justify-between">
                                             <div>

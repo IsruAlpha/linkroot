@@ -31,6 +31,7 @@ const SocialCard = ({
   buttons,
 }: SocialCardProps) => {
   const [isHovered, setHovered] = useState(false);
+  const [isToggled, setIsToggled] = useState(false);
 
   return (
     <motion.div
@@ -46,6 +47,7 @@ const SocialCard = ({
       whileHover={{ scale: 1.02 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={() => setIsToggled(!isToggled)}
     >
       <div className="relative mb-2 p-6 pb-4">
         <div className="flex items-start justify-between">
@@ -143,7 +145,7 @@ const SocialCard = ({
         className="absolute right-0 bottom-0 left-0 rounded-t-2xl border-t border-neutral-200/80 bg-white/95 px-6 pt-3 pb-5 backdrop-blur-sm dark:border-zinc-800 dark:bg-zinc-950/95"
         initial={{ y: "100%" }}
         animate={{
-          y: isHovered ? 0 : "calc(100% - 43px)",
+          y: (isHovered || isToggled) ? 0 : "calc(100% - 43px)",
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >

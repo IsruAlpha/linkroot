@@ -21,6 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://linkroot.space'),
   title: 'Linkroot — The Modern Link-in-Bio Platform | Linktree Alternative',
   description:
     'Linkroot is the free, modern alternative to Linktree. Create a beautiful link-in-bio page in minutes — share all your socials, content, and links from one customizable page.',
