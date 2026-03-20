@@ -1,12 +1,16 @@
 import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/app-sidebar"
 import { Header } from "@/components/header"
+import { withAuth } from "@workos-inc/authkit-nextjs"
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
     children,
 }: {
     children: React.ReactNode
 }) {
+    // Redirect unauthenticated users to sign-in
+    await withAuth({ ensureSignedIn: true });
+
     return (
         <SidebarProvider>
             <div className="flex min-h-screen w-full bg-background">

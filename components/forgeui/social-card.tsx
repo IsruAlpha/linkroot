@@ -45,13 +45,8 @@ const SocialCard = ({
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       whileHover={{ scale: 1.02 }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onClick={(e) => {
-        // Only toggle if not clicking a link
-        if ((e.target as HTMLElement).closest('a')) return;
-        setIsToggled(!isToggled);
-      }}
+      onPointerEnter={(e) => { if (e.pointerType !== 'touch') setHovered(true); }}
+      onPointerLeave={(e) => { if (e.pointerType !== 'touch') setHovered(false); }}
     >
       <div className="relative mb-2 p-6 pb-4">
         <div className="flex items-start justify-between">

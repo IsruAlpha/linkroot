@@ -14,6 +14,11 @@ export default authkitMiddleware({
       '/contact',
       '/privacy',
       '/licence',
+      '/pricing',
+      // Public profile pages — any top-level /:username route
+      '/:username',
+      // Dynamic OG image generation for social sharing previews
+      '/api/og/:username',
     ],
   },
   redirectUri:
