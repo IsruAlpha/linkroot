@@ -4,6 +4,7 @@ import './globals.css';
 import { ConvexClientProvider } from '@/components/ConvexClientProvider';
 import { withAuth } from '@workos-inc/authkit-nextjs';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import Script from 'next/script';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -22,9 +23,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://linkroot.space'),
-  title: 'Linkroot — The Modern Link-in-Bio Platform | Linktree Alternative',
+  title: 'Linkroot — The AI Native Linktree App | Linktree Alternative',
   description:
-    'Linkroot is the free, modern alternative to Linktree. Create a beautiful link-in-bio page in minutes — share all your socials, content, and links from one customizable page.',
+    'Linkroot is the free, modern alternative to Linktree. Create a minimal, clean linktree page in minutes — share all your socials, content, and links from one customizable page.',
   keywords: [
     'link in bio',
     'linktree alternative',
@@ -70,6 +71,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning className={`${geistSans.variable} ${outfit.variable} ${geistMono.variable} antialiased`}>
+        <Script
+          src="https://cloud.umami.is/script.js"
+          data-website-id="de4dac41-519f-4a08-9ede-39bc777b2ce0"
+          strategy="afterInteractive"
+        />
         <TooltipProvider>
           <Toaster position="top-center" theme="dark" closeButton />
           <ConvexClientProvider expectAuth={!!accessToken}>{children}</ConvexClientProvider>
