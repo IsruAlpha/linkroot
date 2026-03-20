@@ -47,7 +47,11 @@ const SocialCard = ({
       whileHover={{ scale: 1.02 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onClick={() => setIsToggled(!isToggled)}
+      onClick={(e) => {
+        // Only toggle if not clicking a link
+        if ((e.target as HTMLElement).closest('a')) return;
+        setIsToggled(!isToggled);
+      }}
     >
       <div className="relative mb-2 p-6 pb-4">
         <div className="flex items-start justify-between">
@@ -150,11 +154,22 @@ const SocialCard = ({
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
         <div className="text-neutral-900 dark:text-neutral-100">
-          <div className="mb-2 flex items-center justify-between text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+          <div 
+            className="mb-2 flex items-center justify-between text-sm font-semibold text-neutral-900 dark:text-neutral-100 cursor-pointer select-none py-3 -mt-3 -mx-6 px-6 relative z-30"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setIsToggled(!isToggled);
+            }}
+          >
             <span>Connect with me</span>
-            <span>
-              <LuArrowUpRight />
-            </span>
+            <motion.div
+              className="p-1.5 rounded-full bg-neutral-100 dark:bg-zinc-900 group-hover:bg-neutral-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-colors"
+              animate={{ rotate: (isHovered || isToggled) ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <LuArrowUpRight className="rotate-45 size-3.5" />
+            </motion.div>
           </div>
           <p className="mb-4 text-xs leading-relaxed font-medium text-neutral-600 dark:text-neutral-400">
             {pitch}

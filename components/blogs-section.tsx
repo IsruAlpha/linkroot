@@ -60,17 +60,17 @@ function BlogCard({
 		return (
 			<a
 				className={cn(
-					"group flex h-24 w-full flex-col justify-center gap-y-1 p-4 hover:cursor-pointer hover:bg-accent/30 active:bg-accent dark:active:bg-accent/50",
+					"group flex min-h-24 w-full flex-col justify-center gap-y-2 p-6 hover:cursor-pointer hover:bg-accent/30 active:bg-accent dark:active:bg-accent/50 transition-colors",
 					className
 				)}
 				{...props}
 			>
-				<div className="relative flex items-end justify-center gap-2">
-					<h3 className="whitespace-nowrap font-medium text-foreground text-lg md:text-xl">
+				<div className="relative flex flex-col md:flex-row md:items-end justify-between gap-2">
+					<h3 className="font-semibold text-foreground text-lg md:text-xl leading-tight">
 						{title}
 					</h3>
-					<span className="mb-[6px] w-full border-b-2 border-dashed border-border/30" />
-					<span className="whitespace-nowrap font-mono text-muted-foreground text-xs uppercase group-hover:text-foreground md:text-sm">
+					<span className="hidden md:block mb-[6px] flex-1 border-b-2 border-dashed border-border/30" />
+					<span className="whitespace-nowrap font-mono text-muted-foreground text-[10px] md:text-xs uppercase group-hover:text-foreground">
 						{date}
 					</span>
 				</div>
