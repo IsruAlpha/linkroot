@@ -19,6 +19,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const title = `${user.name || user.username}'s Linkroot`;
   const description = user.bio || `Check out ${user.name || user.username}'s links on Linkroot.`;
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://linkroot.space';
+  const ogImageUrl = `${baseUrl}/api/og/${username}`;
 
   return {
     title,
@@ -30,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: `https://linkroot.space/${username}`,
       images: [
         {
-          url: '/og-image.png',
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: title,
@@ -41,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: 'summary_large_image',
       title,
       description,
-      images: ['/og-image.png'],
+      images: [ogImageUrl],
     },
   };
 }

@@ -98,7 +98,7 @@ const SocialCard = ({
           </div>
         </div>
 
-        {isHovered && (
+      {(isHovered || isToggled) && (
           <>
             <motion.img
               src={image}
@@ -125,7 +125,7 @@ const SocialCard = ({
       </div>
 
       <div className="mb-4 flex flex-col items-center px-6">
-        {!isHovered && (
+        {!(isHovered || isToggled) && (
           <>
             <motion.img
               src={image}
