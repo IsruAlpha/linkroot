@@ -53,7 +53,7 @@ const features: FeatureType[] = [
 		title: "Lightning Fast",
 		icon: <ZapIcon />,
 		description:
-			"Your links open in a snap. No loading screens or waiting around. Just a fast, clean experience for anyone who clicks.",
+			"Connect your links in under 2 min, and spin up your clean and modern page ",
 	},
 	{
 		title: "Custom Themes",
@@ -77,13 +77,13 @@ const features: FeatureType[] = [
 		title: "Secure & Private",
 		icon: <ShieldCheckIcon />,
 		description:
-			"Your information is yours. We keep things locked down with solid security so you never have to worry about your data.",
+			"We keep things locked down with solid security so you never have to worry about your data.",
 	},
 	{
 		title: "Smart Organization",
 		icon: <LayoutGridIcon />,
 		description:
-			"Keep your links tidy. Pin your latest project to the top or group similar things together so people find what they need.",
+			"Keep you links organized, pin, rearrange them so people can what they need.",
 	},
 ];
 
