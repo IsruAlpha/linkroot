@@ -1,83 +1,79 @@
-# Welcome to your Convex + Next.js + WorkOS AuthKit app
+# Linkroot
 
-This is a [Convex](https://convex.dev/) project migrated to use WorkOS AuthKit for authentication.
+Linkroot is an AI-native linktree platform designed for creators, entrepreneurs, and professionals who want a premium, minimalist digital identity.
 
-After the initial setup (<2 minutes) you'll have a working full-stack app using:
+## Features
 
-- Convex as your backend (database, server logic)
-- [React](https://react.dev/) as your frontend (web page interactivity)
-- [Next.js](https://nextjs.org/) for optimized web hosting and page routing
-- [Tailwind](https://tailwindcss.com/) for building great looking accessible UI
-- [WorkOS AuthKit](https://authkit.com/) for authentication
+- **AI-Native Integration**: Intelligent theme generation and content optimization.
+- **Truly Live Preview**: See your changes instantly as you type.
+- **Premium Design**: Minimalist aesthetics with smooth animations and glassmorphism.
+- **Smart Icon Detection**: Automatically detects platforms from URLs.
+- **WorkOS Authentication**: Secure and seamless sign-in experience.
+- **Convex Backend**: Fast, reactive database and serverless functions.
 
-## Get started
+## Getting Started
 
-1. Clone this repository and install dependencies:
+Follow these steps to get Linkroot running locally.
 
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or later)
+- [npm](https://www.npmjs.com/)
+- A [WorkOS](https://workos.com/) account
+- A [Convex](https://convex.dev/) account
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/linkroot.git
+   cd linkroot/my-app
+   ```
+
+2. **Install dependencies**:
    ```bash
    npm install
    ```
 
-2. Set up your environment variables:
+3. **Set up environment variables**:
+   Copy the example environment file and fill in your credentials from WorkOS and Convex.
    ```bash
    cp .env.local.example .env.local
    ```
-3. Configure WorkOS AuthKit:
-   - Create a [WorkOS account](https://workos.com/)
-   - Get your Client ID and API Key from the WorkOS dashboard
-   - In the WorkOS dashboard, add `http://localhost:3000/callback` as a redirect URI
-   - Generate a secure password for cookie encryption (minimum 32 characters)
-   - Update your `.env.local` file with these values
 
-4. Configure Convex:
+4. **Configure WorkOS**:
+   - Get your `WORKOS_CLIENT_ID` and `WORKOS_API_KEY` from the WorkOS dashboard.
+   - Add `http://localhost:3000/callback` as a redirect URI in your WorkOS project.
+   - Set a `WORKOS_COOKIE_PASSWORD` (minimum 32 characters).
 
+5. **Initialize Convex**:
    ```bash
    npx convex dev
    ```
+   This will set up your Convex deployment and add your Convex URL to `.env.local`.
 
-   This will:
-   - Set up your Convex deployment
-   - Add your Convex URL to `.env.local`
-   - Open the Convex dashboard
-
-   Then configure WorkOS authentication in Convex:
-
+6. **Add WorkOS Auth to Convex**:
    ```bash
    npx convex auth add workos
    ```
 
-   This creates `convex/auth.config.ts` with WorkOS integration
+### Running Locally
 
-5. Run the development server:
+To start the development server (both Next.js and Convex):
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
-   This starts both the Next.js frontend and Convex backend in parallel
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-6. Open [http://localhost:3000](http://localhost:3000) to see your app
+## Tech Stack
 
-## WorkOS AuthKit Setup
+- **Frontend**: Next.js, React, Tailwind CSS, Lucide React
+- **Backend**: Convex
+- **Authentication**: WorkOS AuthKit
+- **Deployment**: Vercel (recommended)
 
-This app uses WorkOS AuthKit for authentication. Key features:
+## License
 
-- **Redirect-based authentication**: Users are redirected to WorkOS for sign-in/sign-up
-- **Session management**: Automatic token refresh and session handling
-- **Route protection**: Routes are protected using Next.js Proxy
-- **Client and server hooks**: `useAuth()` for client components, `withAuth()` for server components
-
-## Learn more
-
-To learn more about developing your project with Convex, check out:
-
-- The [Tour of Convex](https://docs.convex.dev/get-started) for a thorough introduction to Convex principles.
-- The rest of [Convex docs](https://docs.convex.dev/) to learn about all Convex features.
-- [Stack](https://stack.convex.dev/) for in-depth articles on advanced topics.
-
-## Join the community
-
-Join thousands of developers building full-stack apps with Convex:
-
-- Join the [Convex Discord community](https://convex.dev/community) to get help in real-time.
-- Follow [Convex on GitHub](https://github.com/get-convex/), star and contribute to the open-source implementation of Convex.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

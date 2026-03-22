@@ -23,9 +23,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://linkroot.space'),
-  title: 'Linkroot — The AI Native Linktree App | Linktree Alternative',
+  title: 'Linkroot | The AI Native Linktree App | Linktree Alternative',
   description:
-    'Linkroot is the free, modern alternative to Linktree. Create a minimal, clean linktree page in minutes — share all your socials, content, and links from one customizable page.',
+    'Linkroot is the free, modern alternative to Linktree. Create a minimal, clean linktree page in minutes, share all your socials, content, and links from one customizable page.',
   keywords: [
     'link in bio',
     'linktree alternative',
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     'creator tools',
   ],
   openGraph: {
-    title: 'Linkroot — The Modern Link-in-Bio Platform',
+    title: 'Linkroot | The Modern Linktree Platform',
     description:
-      'Create a beautiful link-in-bio page in minutes. The free, modern Linktree alternative.',
+      'Create a beautiful Linktree page in minutes. The free, modern Linktree alternative.',
     siteName: 'Linkroot',
     type: 'website',
     images: [
@@ -47,15 +47,15 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Linkroot — The Modern Link-in-Bio Platform',
+        alt: 'Linkroot | The Modern Linktree Platform',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Linkroot — The Modern Link-in-Bio Platform',
+    title: 'Linkroot | The Modern Linktree Platform',
     description:
-      'Create a beautiful link-in-bio page in minutes. The free, modern Linktree alternative.',
+      'Create a beautiful Linktree page in minutes. The free, modern Linktree alternative.',
     images: ['/og-image.png'],
   },
 };

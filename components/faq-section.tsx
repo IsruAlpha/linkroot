@@ -11,7 +11,7 @@ const faqs = [
 		id: "item-1",
 		title: "What is Linkroot?",
 		content:
-			"Linkroot is the modern link-in-bio platform that lets you share all your socials, content, and links from one beautiful, customizable page.",
+			"Linkroot is the modern Linktree platform that lets you share all your socials, content, and links from one beautiful, customizable page.",
 	},
 	{
 		id: "item-2",
@@ -29,7 +29,7 @@ const faqs = [
 		id: "item-4",
 		title: "Which platforms does Linkroot support?",
 		content:
-			"Linkroot works with all major platforms — Instagram, TikTok, YouTube, Twitter/X, Spotify, your website, and more. If it has a URL, you can link it.",
+			"Linkroot works with all major platforms: Instagram, TikTok, YouTube, Twitter/X, Spotify, your website, and more. If it has a URL, you can link it.",
 	},
 	{
 		id: "item-5",

@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 
 const blogs = [
 	{
-		title: "AI-Native: The Future of Link-in-Bio",
+		title: "AI-Native: The Future of Linktree",
 		date: "Mar 21 2026",
 		description:
 			"How our app is revolutionizing Linktree apps with AI-native integration and clean and minimal designs!",

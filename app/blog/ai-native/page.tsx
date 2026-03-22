@@ -37,7 +37,7 @@ export default function AINativeBlogPost() {
               March 21, 2026
             </time>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight">
-              Revolutionizing Link-in-Bio: The AI-Native Revolution
+              Revolutionizing Linktree: The AI-Native Revolution
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Discover how Linkroot is redefining the digital identity landscape through AI-native integration and premium, minimalist design.
@@ -51,12 +51,11 @@ export default function AINativeBlogPost() {
                   "The best design is the one you don't even notice. The best AI is the one that feels like magic."
                 </p>
                 <p className="text-muted-foreground">
-                  For years, link-in-bio apps have followed a predictable formula: a list of buttons, some basic icons, and limited customization. At Linkroot, we decided that "good enough" wasn't enough. We set out to build something fundamentally different—an AI-native platform that understands your brand and helps you express it with unparalleled elegance.
+                  For years, linktree apps have followed a predictable formula: a list of buttons, some basic icons, and limited customization. At Linkroot, we decided that "good enough" wasn't enough. We set out to build something fundamentally different, an AI-native platform that understands your brand and helps you express it with unparalleled elegance.
                 </p>
               </section>
 
-              <h2 className="text-2xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
-                <Sparkles className="size-6 text-yellow-500" />
+              <h2 className="text-2xl font-bold text-white mt-12 mb-6">
                 AI-Native: Beyond the Buzzword
               </h2>
 
@@ -68,7 +67,7 @@ export default function AINativeBlogPost() {
                 <FeatureCard
                   icon={<Zap className="size-5" />}
                   title="Intelligent Theme Generation"
-                  description="Our AI analyzes your content and brand colors to generate custom themes that aren't just templates—they are unique digital environments tailored specifically to you."
+                  description="Our AI analyzes your content and brand colors to generate custom themes that aren't just templates; they are unique digital environments tailored specifically to you."
                 />
                 <FeatureCard
                   icon={<Fingerprint className="size-5" />}
@@ -91,7 +90,7 @@ export default function AINativeBlogPost() {
               </p>
 
               <p className="text-muted-foreground">
-                Our "Glassmorphism" effect, smooth transitions, and high-contrast dark modes aren't just aesthetic choices—they are functional elements designed to keep your audience focused on what matters most: your content.
+                Our "Glassmorphism" effect, smooth transitions, and high-contrast dark modes aren't just aesthetic choices; they are functional elements designed to keep your audience focused on what matters most: your content.
               </p>
 
               <h2 className="text-2xl font-bold text-white mt-12 mb-6">
@@ -113,7 +112,7 @@ export default function AINativeBlogPost() {
               </h2>
 
               <p className="text-muted-foreground">
-                We're not just building a link-in-bio tool; we're building the future of personal branding. With upcoming features like AI-powered analytics insights and automated social cross-posting, Linkroot is becoming the central hub for your entire online presence.
+                We're not just building a linktree tool; we're building the future of personal branding. With upcoming features like AI-powered analytics insights and automated social cross-posting, Linkroot is becoming the central hub for your entire online presence.
               </p>
 
               <div className="mt-16 p-8 bg-zinc-900/50 border border-zinc-800/40 rounded-2xl relative overflow-hidden group">

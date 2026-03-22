@@ -10,6 +10,6 @@ function postLogoutOrigin(): string {
 }
 
 export async function GET() {
-    // signOut() ends the request with redirect() — it never returns; returnTo is required or WorkOS falls back to the OAuth app URL (often localhost).
+    // signOut() ends the request with redirect(). It never returns; returnTo is required or WorkOS falls back to the OAuth app URL (often localhost).
     await signOut({ returnTo: `${postLogoutOrigin()}/` });
 }

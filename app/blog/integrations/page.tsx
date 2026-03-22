@@ -47,7 +47,7 @@ export default function IntegrationsBlogPost() {
           <div className="prose prose-invert max-w-none">
             <div className="space-y-6 text-base leading-relaxed">
               <p className="text-muted-foreground">
-                In today's digital landscape, creators and professionals use dozens of different platforms to share their work, connect with their audience, and build their brand. Managing all these links can be overwhelming—that's where Linkroot comes in.
+                In today's digital landscape, creators and professionals use dozens of different platforms to share their work, connect with their audience, and build their brand. Managing all these links can be overwhelming, that's where Linkroot comes in.
               </p>
 
               <h2 className="text-2xl font-bold text-white mt-12 mb-6">
@@ -90,7 +90,7 @@ export default function IntegrationsBlogPost() {
               </h2>
 
               <p className="text-muted-foreground">
-                One of Linkroot's standout features is our intelligent icon detection system. Simply paste your link, and we automatically identify the platform and display the perfect icon. No manual configuration needed—it just works.
+                One of Linkroot's standout features is our intelligent icon detection system. Simply paste your link, and we automatically identify the platform and display the perfect icon. No manual configuration needed. It just works.
               </p>
 
               <p className="text-muted-foreground">
@@ -111,7 +111,7 @@ export default function IntegrationsBlogPost() {
               </h2>
 
               <p className="text-muted-foreground">
-                All your integrations are displayed in a clean, modern card interface that looks great on any device. Each link button features smooth animations, hover effects, and is fully optimized for mobile viewing—ensuring your audience has the best experience no matter how they access your Linkroot page.
+                All your integrations are displayed in a clean, modern card interface that looks great on any device. Each link button features smooth animations, hover effects, and is fully optimized for mobile viewing, ensuring your audience has the best experience no matter how they access your Linkroot page.
               </p>
 
               <h2 className="text-2xl font-bold text-white mt-12 mb-6">
@@ -139,11 +139,11 @@ export default function IntegrationsBlogPost() {
               </h2>
 
               <p className="text-muted-foreground">
-                We're constantly expanding our integration library based on user feedback. Have a platform you'd love to see supported? Reach out to us on Twitter or GitHub—we'd love to hear from you.
+                We're constantly expanding our integration library based on user feedback. Have a platform you'd love to see supported? Reach out to us on Twitter or GitHub, we'd love to hear from you.
               </p>
 
               <p className="text-muted-foreground">
-                Our mission is to make Linkroot the most versatile and beautiful link-in-bio platform available. With our growing integration ecosystem, you'll never need to worry about whether your favorite platform is supported.
+                Our mission is to make Linkroot the most versatile and beautiful linktree platform available. With our growing integration ecosystem, you'll never need to worry about whether your favorite platform is supported.
               </p>
 
               <div className="mt-12 p-6 bg-zinc-900/50 border border-zinc-800/40 rounded-xl">

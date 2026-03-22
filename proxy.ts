@@ -15,7 +15,7 @@ export default authkitMiddleware({
       '/privacy',
       '/licence',
       '/pricing',
-      // Public profile pages — any top-level /:username route
+      // Public profile pages: any top-level /:username route
       '/:username',
       // Dynamic OG image generation for social sharing previews
       '/api/og/:username',
