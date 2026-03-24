@@ -5,6 +5,13 @@ import { ArrowLeft } from "lucide-react";
 
 const blogs = [
 	{
+		title: "7 Best Free Linktree Alternatives in 2026",
+		date: "Mar 25 2026",
+		description:
+			"Linktree is everywhere. But is it actually the best option? We tried a bunch of link-in-bio tools so you don't have to.",
+		href: "/blog/linktree-alternatives",
+	},
+	{
 		title: "AI-Native: The Future of Linktree",
 		date: "Mar 21 2026",
 		description:
