@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Plus, Link2, Pencil, Trash2, GripVertical, ExternalLink, Copy, Check, Info, Camera, Loader2, Palette } from "lucide-react"
+import { Plus, Link2, Pencil, Trash2, GripVertical, ExternalLink, Copy, Check, Info, Camera, Loader2, Palette, Crop } from "lucide-react"
 import { Switch } from "@/components/ui/switch"
 import { AddLinkModal } from "../../components/add-link-modal"
 import { EditLinkModal } from "../../components/edit-link-modal"
@@ -24,6 +24,8 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/base-po
 import { Badge } from "@/components/ui/base-badge"
 import { ThemeSelector } from "../../components/theme-selector"
 import { Background, PATTERNS } from "@/lib/patterns"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogDescription } from "@/components/ui/dialog"
+import { ImageCrop, ImageCropContent, ImageCropApply } from "@/components/kibo-ui/image-crop"
 
 export default function DashboardPage() {
     const [isAddModalOpen, setIsAddModalOpen] = useState(false)
@@ -33,6 +35,8 @@ export default function DashboardPage() {
     const [isEditingProfile, setIsEditingProfile] = useState(false)
     const [isUploadingImage, setIsUploadingImage] = useState(false)
     const [copied, setCopied] = useState(false)
+    const [cropFile, setCropFile] = useState<File | null>(null)
+    const [isCropDialogOpen, setIsCropDialogOpen] = useState(false)
     const fileInputRef = useRef<HTMLInputElement>(null)
 
     // Convex queries and mutations
@@ -136,17 +140,29 @@ export default function DashboardPage() {
         setTimeout(() => setCopied(false), 2000)
     }
 
-    const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0]
         if (!file) return
+        setCropFile(file)
+        setIsCropDialogOpen(true)
+        // Reset the input so the same file can be re-selected
+        e.target.value = ""
+    }
 
+    const handleCroppedUpload = async (croppedDataUrl: string) => {
+        setIsCropDialogOpen(false)
+        setCropFile(null)
         setIsUploadingImage(true)
         try {
+            // Convert data URL to blob
+            const res = await fetch(croppedDataUrl)
+            const blob = await res.blob()
+
             const postUrl = await generateUploadUrl()
             const result = await fetch(postUrl, {
                 method: "POST",
-                headers: { "Content-Type": file.type },
-                body: file,
+                headers: { "Content-Type": blob.type },
+                body: blob,
             })
             const { storageId } = await result.json()
             await saveImageUrl({ storageId })
@@ -537,6 +553,53 @@ export default function DashboardPage() {
                     </div>
                 </div>
             </div>
+
+            {/* Image Crop Dialog */}
+            <Dialog open={isCropDialogOpen} onOpenChange={(open) => {
+                if (!open) {
+                    setIsCropDialogOpen(false)
+                    setCropFile(null)
+                }
+            }}>
+                <DialogContent className="bg-zinc-950 border-zinc-800 sm:max-w-md" showCloseButton={false}>
+                    <DialogHeader>
+                        <DialogTitle className="text-white font-outfit">Crop Profile Photo</DialogTitle>
+                        <DialogDescription className="text-zinc-400 font-outfit">
+                            Drag to reposition. Your photo will be cropped to a circle.
+                        </DialogDescription>
+                    </DialogHeader>
+                    {cropFile && (
+                        <ImageCrop
+                            file={cropFile}
+                            aspect={1}
+                            circularCrop
+                            onCrop={handleCroppedUpload}
+                        >
+                            <div className="flex justify-center py-2">
+                                <ImageCropContent className="max-h-[350px] rounded-lg overflow-hidden" />
+                            </div>
+                            <DialogFooter className="gap-2 sm:gap-0">
+                                <Button
+                                    variant="ghost"
+                                    onClick={() => {
+                                        setIsCropDialogOpen(false)
+                                        setCropFile(null)
+                                    }}
+                                    className="text-zinc-400 hover:text-white font-outfit"
+                                >
+                                    Cancel
+                                </Button>
+                                <ImageCropApply asChild>
+                                    <Button className="bg-white text-black hover:bg-zinc-200 rounded-full px-6 font-bold font-outfit">
+                                        <Crop className="size-4 mr-2" />
+                                        Crop & Upload
+                                    </Button>
+                                </ImageCropApply>
+                            </DialogFooter>
+                        </ImageCrop>
+                    )}
+                </DialogContent>
+            </Dialog>
 
             <EditLinkModal
                 isOpen={isEditModalOpen}
