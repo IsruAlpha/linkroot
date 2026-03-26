@@ -76,6 +76,12 @@ export default async function RootLayout({
           data-website-id="de4dac41-519f-4a08-9ede-39bc777b2ce0"
           strategy="afterInteractive"
         />
+        <Script
+          src="https://cdn.databuddy.cc/databuddy.js"
+          data-client-id="33ddc234-5416-4343-8681-a96244e79a7e"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <TooltipProvider>
           <Toaster position="top-center" theme="dark" closeButton />
           <ConvexClientProvider expectAuth={!!accessToken}>{children}</ConvexClientProvider>
