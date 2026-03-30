@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import React from "react";
 import { Portal, PortalBackdrop } from "@/components/ui/portal";
@@ -5,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { navLinks } from "@/components/header";
 import { XIcon, MenuIcon } from "lucide-react";
 import { useAuth } from "@workos-inc/authkit-nextjs/components";
+import Link from "next/link";
 
 export function MobileNav() {
 	const [open, setOpen] = React.useState(false);
@@ -45,7 +48,7 @@ export function MobileNav() {
 									key={link.label}
 									variant="ghost"
 								>
-									<a href={link.href}>{link.label}</a>
+									<Link href={link.href}>{link.label}</Link>
 								</Button>
 							))}
 						</div>
@@ -61,7 +64,7 @@ export function MobileNav() {
 								</>
 							) : (
 								<Button asChild className="w-full">
-									<a href="/dashboard">Dashboard</a>
+									<Link href="/dashboard">Dashboard</Link>
 								</Button>
 							)}
 						</div>

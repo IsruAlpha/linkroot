@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { UserIcon } from "@/components/ui/user";
+import { GithubIcon } from "@/components/ui/github";
 import { TwitterIcon } from "@/components/ui/twitter";
 
 const LinkrootLogo = ({ className }: { className?: string }) => (
@@ -51,9 +51,9 @@ const socialLinks = [
 		Icon: TwitterIcon,
 	},
 	{
-		href: "https://israelfirew.co/",
-		label: "Personal Website",
-		Icon: UserIcon,
+		href: "https://github.com/IsruAlpha/linkroot",
+		label: "GitHub",
+		Icon: GithubIcon,
 	},
 ];
 
