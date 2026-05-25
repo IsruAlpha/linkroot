@@ -26,10 +26,10 @@ function FeatureCard({
 }) {
 	return (
 		<div
-			className={cn("relative overflow-hidden bg-background p-6", className)}
+			className={cn("relative overflow-hidden bg-background p-5 sm:p-6", className)}
 			{...props}
 		>
-			<div className="mask-[radial-gradient(farthest-side_at_top,white,transparent)] pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 size-full">
+			<div className="mask-[radial-gradient(farthest-side_at_top,white,transparent)] pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 hidden size-full sm:block">
 				<GridPattern
 					className="absolute inset-0 size-full stroke-foreground/20"
 					height={40}
@@ -40,8 +40,8 @@ function FeatureCard({
 			<div className="[&_svg]:size-6 [&_svg]:text-foreground/75">
 				{feature.icon}
 			</div>
-			<h3 className="mt-10 text-sm md:text-base">{feature.title}</h3>
-			<p className="relative z-20 mt-2 font-light text-muted-foreground text-xs">
+			<h3 className="mt-6 text-sm sm:mt-10 md:text-base">{feature.title}</h3>
+			<p className="relative z-20 mt-2 text-sm leading-relaxed text-muted-foreground sm:font-light sm:text-xs sm:leading-normal">
 				{feature.description}
 			</p>
 		</div>
@@ -90,17 +90,16 @@ const features: FeatureType[] = [
 export function FeaturesSection() {
 	return (
 		<section id="features">
-			<div className="mx-auto w-full max-w-5xl space-y-8 px-4 py-32 md:px-8">
-				<div className="mx-auto max-w-3xl text-center">
-					<h2 className="font-outfit text-balance font-medium text-2xl md:text-4xl lg:text-5xl">
+			<div className="mx-auto w-full max-w-5xl space-y-8 px-4 py-14 sm:space-y-8 sm:px-6 sm:py-24 md:px-8 md:py-32">
+				<div className="mx-auto max-w-3xl px-1 text-center">
+					<h2 className="font-outfit text-balance text-[1.9rem] font-medium leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
 						Designed for power users who value minimal designs.
 					</h2>
-					<p className="mt-4 text-balance text-muted-foreground text-sm md:text-base">
+					<p className="mt-4 text-balance text-sm text-muted-foreground md:text-base">
 						Everything you need to stand out and grow your audience.
 					</p>
 				</div>
-
-				<div className="overflow-hidden rounded-lg border border-border/50">
+				<div className="overflow-hidden rounded-2xl border border-border/50 sm:rounded-lg">
 					<div className="grid grid-cols-1 gap-px bg-border/50 sm:grid-cols-2 md:grid-cols-3">
 						{features.map((feature) => (
 							<FeatureCard feature={feature} key={feature.title} />

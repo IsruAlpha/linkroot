@@ -1,75 +1,82 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { DecorIcon } from "@/components/ui/decor-icon";
 import { FullWidthDivider } from "@/components/ui/full-width-divider";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon, CalendarIcon } from "lucide-react";
+import { Badge14 } from "@/components/ui/badge-14";
+import { TextAnimate } from "@/components/ui/text-animate";
+import { ArrowRightIcon } from "lucide-react";
+
 const CAL_DEMO = "https://cal.com/israel-firew1/linkroot";
 
 export function HeroSection() {
 	return (
 		<section>
-			<div className="relative flex flex-col items-center justify-center gap-5 px-4 py-12 md:px-4 md:py-24 lg:py-28">
+			<div className="relative flex flex-col items-center justify-center gap-8 px-4 py-12 sm:gap-7 sm:px-6 sm:py-20 md:gap-8 md:px-8 md:py-24 lg:py-28">
 				<div
 					aria-hidden="true"
 					className="absolute inset-0 -z-1 size-full overflow-hidden"
 				>
 					<div
 						className={cn(
-							"absolute -inset-x-20 inset-y-0 z-0 rounded-full",
+							"absolute -inset-x-10 inset-y-0 z-0 rounded-full sm:-inset-x-20",
 							"bg-[radial-gradient(ellipse_at_center,theme(--color-foreground/.1),transparent,transparent)]",
-							"blur-[50px]"
+							"blur-[40px] sm:blur-[50px]"
 						)}
 					/>
-					<div className="absolute inset-y-0 left-4 w-px bg-linear-to-b from-transparent via-border to-border md:left-8" />
-					<div className="absolute inset-y-0 right-4 w-px bg-linear-to-b from-transparent via-border to-border md:right-8" />
-					<div className="absolute inset-y-0 left-8 w-px bg-linear-to-b from-transparent via-border/50 to-border/50 md:left-12" />
-					<div className="absolute inset-y-0 right-8 w-px bg-linear-to-b from-transparent via-border/50 to-border/50 md:right-12" />
+					<div className="absolute inset-y-0 left-0 hidden w-px bg-linear-to-b from-transparent via-border to-border sm:left-4 md:left-8 sm:block" />
+					<div className="absolute inset-y-0 right-0 hidden w-px bg-linear-to-b from-transparent via-border to-border sm:right-4 md:right-8 sm:block" />
+					<div className="absolute inset-y-0 left-8 hidden w-px bg-linear-to-b from-transparent via-border/50 to-border/50 md:left-12 md:block" />
+					<div className="absolute inset-y-0 right-8 hidden w-px bg-linear-to-b from-transparent via-border/50 to-border/50 md:right-12 md:block" />
 				</div>
-				<a
-					className={cn(
-						"group mx-auto flex w-fit items-center gap-3 rounded-sm border bg-card p-1 shadow",
-						"fade-in slide-in-from-bottom-10 animate-in fill-mode-backwards transition-all delay-500 duration-500 ease-out"
-					)}
-					href={CAL_DEMO}
-					rel="noreferrer"
-					target="_blank"
-				>
-					<div className="rounded-xs flex items-center gap-1.5 border bg-card px-1.5 py-0.5 shadow-sm">
-						<CalendarIcon className="size-3 text-muted-foreground" />
-						<p className="font-mono text-xs">Demo</p>
-					</div>
 
-					<span className="text-xs">Book a Demo</span>
-					<span className="block h-5 border-l" />
-
-					<div className="pr-1">
-						<ArrowRightIcon className="size-3 -translate-x-0.5 duration-150 ease-out group-hover:translate-x-0.5" />
-					</div>
-				</a>
-
+				<div className="fade-in slide-in-from-bottom-10 w-full animate-in fill-mode-backwards delay-500 duration-500 ease-out flex justify-center">
+					<Badge14 href={CAL_DEMO}>Book a Demo</Badge14>
+				</div>
 				<h1
 					className={cn(
-						"font-outfit max-w-2xl whitespace-pre-line text-balance text-center text-3xl text-foreground tracking-tight md:text-5xl lg:text-6xl",
-						"fade-in slide-in-from-bottom-10 animate-in fill-mode-backwards delay-100 duration-500 ease-out"
+						"font-outfit max-w-xs text-balance text-center text-[2.2rem] leading-[1.05] tracking-tight text-foreground",
+						"sm:max-w-md sm:text-4xl sm:leading-[1.08]",
+						"md:max-w-2xl md:text-5xl lg:text-6xl"
 					)}
 				>
-					{`The modern linktree app\nfor your socials`}
+					<TextAnimate
+						animation="blurInUp"
+						as="span"
+						by="word"
+						className="block"
+						duration={0.45}
+					>
+						The modern linktree app
+					</TextAnimate>
+					<TextAnimate
+						animation="blurInUp"
+						as="span"
+						by="word"
+						className="block"
+						delay={0.35}
+						duration={0.45}
+					>
+						for your socials
+					</TextAnimate>
 				</h1>
 
 				<p
 					className={cn(
-						"text-center text-muted-foreground text-sm tracking-wider sm:text-lg",
+						"max-w-sm px-1 text-center text-[0.95rem] leading-relaxed tracking-wide text-muted-foreground",
+						"sm:max-w-md sm:text-base sm:tracking-wider",
 						"fade-in slide-in-from-bottom-10 animate-in fill-mode-backwards delay-200 duration-500 ease-out"
 					)}
 				>
-					Create Your Ai Native Linktree.
+					Create your AI-native link page in minutes.
 				</p>
 
-				<div className="fade-in slide-in-from-bottom-10 flex w-fit animate-in flex-wrap items-center justify-center gap-3 fill-mode-backwards pt-2 delay-300 duration-500 ease-out">
-					<Button asChild size="lg" variant="outline">
+				<div className="fade-in slide-in-from-bottom-10 flex w-full max-w-sm animate-in flex-col gap-3 fill-mode-backwards px-1 pt-1 delay-300 duration-500 ease-out sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-3 sm:px-0 sm:pt-2">
+					<Button asChild className="h-11 w-full sm:h-10 sm:w-auto" size="lg" variant="outline">
 						<a href="/sign-in">Sign in</a>
 					</Button>
-					<Button asChild size="lg">
+					<Button asChild className="h-11 w-full sm:h-10 sm:w-auto" size="lg">
 						<a href="/sign-up">
 							Get Started <ArrowRightIcon data-icon="inline-end" />
 						</a>
@@ -77,16 +84,16 @@ export function HeroSection() {
 				</div>
 			</div>
 			<div className="relative">
-				<DecorIcon className="size-4" position="top-left" />
-				<DecorIcon className="size-4" position="top-right" />
-				<DecorIcon className="size-4" position="bottom-left" />
-				<DecorIcon className="size-4" position="bottom-right" />
+				<DecorIcon className="hidden size-4 sm:block" position="top-left" />
+				<DecorIcon className="hidden size-4 sm:block" position="top-right" />
+				<DecorIcon className="hidden size-4 sm:block" position="bottom-left" />
+				<DecorIcon className="hidden size-4 sm:block" position="bottom-right" />
 
 				<FullWidthDivider className="-top-px" />
-				<div className="relative w-full overflow-hidden bg-muted/20">
+				<div className="relative w-full overflow-hidden bg-muted/20 px-4 pb-4 sm:px-0 sm:pb-0">
 					<img
 						alt="Linkroot dashboard with profile editor and mobile preview"
-						className="pointer-events-none h-auto w-full select-none object-cover object-top"
+						className="pointer-events-none mx-auto h-auto w-full max-w-full select-none rounded-2xl object-cover object-top shadow-xl ring-1 ring-border/50 sm:rounded-none sm:shadow-none sm:ring-0"
 						decoding="async"
 						fetchPriority="high"
 						src="/hero-dashboard.png"

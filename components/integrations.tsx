@@ -16,16 +16,16 @@ type TileData = {
 
 export function Integrations() {
 	return (
-		<div className="relative mx-auto grid max-w-4xl grid-cols-1 gap-12 border-x border-border/10 md:grid-cols-2 md:items-center">
+		<div className="relative mx-auto grid max-w-4xl grid-cols-1 gap-8 border-x border-border/10 px-4 py-10 md:grid-cols-2 md:items-center md:gap-12 md:px-0 md:py-0">
 			<FullWidthDivider className="-top-px opacity-15" />
 
 			{/* Left Content */}
-			<div className="p-8 md:p-12">
+			<div className="rounded-2xl border border-border/40 bg-background/50 p-5 sm:p-6 md:rounded-none md:border-0 md:bg-transparent md:p-12">
 				<div className="space-y-4">
-					<h2 className="font-outfit font-medium text-3xl text-foreground tracking-tight sm:text-4xl">
+					<h2 className="font-outfit font-medium text-[1.9rem] text-foreground tracking-tight sm:text-4xl">
 						Connect with your favorite tools
 					</h2>
-					<p className="text-muted-foreground text-sm md:text-base">
+					<p className="text-sm text-muted-foreground md:text-base">
 						Connect your favorite tools with our growing library of
 						integrations.
 					</p>
@@ -36,8 +36,8 @@ export function Integrations() {
 			</div>
 
 			{/* Right Content - Visual */}
-			<div className="place-items-end overflow-hidden">
-				<div className="relative size-80">
+			<div className="grid place-items-center overflow-hidden md:place-items-end">
+				<div className="relative size-64 sm:size-72 md:size-80">
 					{/* Grid Background */}
 					<div
 						className={cn(

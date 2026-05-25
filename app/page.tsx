@@ -40,7 +40,7 @@ export default function Home() {
       />
       <Header />
       <FullWidthDivider />
-      <main className="relative mx-auto w-full max-w-5xl before:absolute before:inset-y-0 before:-left-px before:w-px before:bg-border after:absolute after:inset-y-0 after:-right-px after:w-px after:bg-border">
+      <main className="relative mx-auto w-full max-w-5xl sm:before:absolute sm:before:inset-y-0 sm:before:-left-px sm:before:w-px sm:before:bg-border sm:after:absolute sm:after:inset-y-0 sm:after:-right-px sm:after:w-px sm:after:bg-border">
         <Unauthenticated>
           <HeroSection />
           <FullWidthDivider />

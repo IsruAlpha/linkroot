@@ -54,17 +54,17 @@ const pricingPlans: PricingPlan[] = [
 
 export function PricingSection() {
 	return (
-		<section className="mx-auto min-h-screen max-w-5xl place-content-center border-x border-border/30 py-4">
+		<section className="mx-auto max-w-5xl place-content-center py-6 sm:min-h-screen sm:border-x sm:border-border/30 sm:py-4">
 			<div className="relative">
 				<FullWidthDivider position="top" className="opacity-40" />
 				<FullWidthDivider position="bottom" className="opacity-40" />
 
 				<div className="grid grid-cols-1 gap-px bg-border/60 md:grid-cols-2 lg:grid-cols-4">
-					<div className="flex flex-col bg-background p-8 md:col-span-2">
-						<p className="mb-6 text-muted-foreground text-sm uppercase tracking-wider">
+					<div className="flex flex-col bg-background p-6 sm:p-8 md:col-span-2">
+						<p className="mb-4 text-muted-foreground text-sm uppercase tracking-wider sm:mb-6">
 							PRICING
 						</p>
-						<h1 className="font-outfit font-bold text-3xl leading-tight md:text-5xl">
+						<h1 className="font-outfit text-2xl font-bold leading-tight sm:text-3xl md:text-5xl">
 							Pricing that doesn't suck
 						</h1>
 					</div>
